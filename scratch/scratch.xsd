@@ -5,4 +5,28 @@
 
     <!-- PLACE YOUR SCHEMA HERE -->
 
+    <!-- Example -->
+    <xs:element name="X">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a" type="xs:string"/>
+                <xs:element name="b" type="xs:int"/>
+                <xs:element ref="this:c"/>
+                <xs:group ref="this:def"/>
+                <xs:sequence minOccurs="0">
+                    <xs:element name="g" type="xs:negativeInteger" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="c" type="xs:token"/>
+
+    <xs:group name="def">
+        <xs:choice>
+            <xs:element name="d" type="xs:boolean"/>
+            <xs:element name="e" type="xs:positiveInteger"/>
+            <xs:element name="f" type="xs:anyURI"/>
+        </xs:choice>
+    </xs:group>
 </xs:schema>

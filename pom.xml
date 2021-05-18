@@ -23,7 +23,7 @@
                 <artifactId>scalaxb-maven-plugin</artifactId>
                 <version>1.8.1</version>
                 <configuration>
-                    <packageName>ru.sbrf.model.scalaxb</packageName>
+                    <packageName>com.my.model.scalaxb</packageName>
                     <xsdDirectory>scratch</xsdDirectory>
                 </configuration>
                 <executions>
@@ -46,7 +46,7 @@
                             <goal>xjc</goal>
                         </goals>
                         <configuration>
-                            <packageName>ru.sbrf.model.jaxb</packageName>
+                            <packageName>com.my.model.jaxb</packageName>
                             <sources>
                                 <source>${project.basedir}/scratch/scratch.xsd</source>
                             </sources>
