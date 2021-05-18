@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>xml-schema-tuturial</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <scala.major.version>2.12</scala.major.version>
+        <scala.version>2.12.12</scala.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.scalaxb</groupId>
+                <artifactId>scalaxb-maven-plugin</artifactId>
+                <version>1.8.1</version>
+                <configuration>
+                    <packageName>ru.sbrf.model.scalaxb</packageName>
+                    <xsdDirectory>scratch</xsdDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>scalaxb</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.5.0</version>
+                <executions>
+                    <execution>
+                        <id>scratch</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>ru.sbrf.model.jaxb</packageName>
+                            <sources>
+                                <source>${project.basedir}/scratch/scratch.xsd</source>
+                            </sources>
+                            <clearOutputDir>false</clearOutputDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

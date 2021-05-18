@@ -1,0 +1,8 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://model.my.com"
+           xmlns:this="https://model.my.com"
+           elementFormDefault="qualified">
+
+    <!-- PLACE YOUR SCHEMA HERE -->
+
+</xs:schema>
